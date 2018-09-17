@@ -1,0 +1,65 @@
+$tester: blue;
+
+@mixin mQ($arg...) {
+  @if length($arg)==1 {
+    @media screen and (min-width: nth($arg,1)){
+    @content;
+    }
+  }
+  @if length($arg) == 2{
+    @media screen and (min-width: nth($arg,1)) and (max-width: nth($arg, 2)) {
+          @content;
+    }
+  }
+}
+@mixin small-display {
+background-image: url("../img/BARRY.jpg");
+}
+
+@mixin medium-display{
+
+}
+
+@mixin large-display {
+
+}
+//End of mixins
+
+.text-content {
+  @include mQ(900px) {
+    color: blue;
+  }
+}
+
+
+ul li {
+  display: inline;
+  @include mQ(400px){
+    display:block;
+  }
+}
+
+body {
+  //mobile
+  @include mQ(0px,599px) {
+    background-image: url("../img/BARRY.jpg");
+    background-repeat: repeat-y;
+    background-color: blue;
+    img {
+      display: none;
+    }
+  }
+  //tablet
+  @include mQ(600px, 900px) {
+    background-color: green;
+  }
+  //desktop
+  @include mQ(901px) {
+    background-image: url("../img/BARRY.jpg");
+    background-repeat: round;
+    background-color: yellow;
+    img {
+      display: none;
+    }
+  }
+}

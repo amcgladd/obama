@@ -1,0 +1,42 @@
+@media screen and (min-width: 900px) {
+  .text-content {
+    color: blue;
+  }
+}
+
+ul li {
+  display: inline;
+}
+@media screen and (min-width: 400px) {
+  ul li {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 599px) {
+  body {
+    background-image: url("../img/BARRY.jpg");
+    background-repeat: repeat-y;
+    background-color: blue;
+  }
+  body img {
+    display: none;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  body {
+    background-color: green;
+  }
+}
+@media screen and (min-width: 901px) {
+  body {
+    background-image: url("../img/BARRY.jpg");
+    background-repeat: round;
+    background-color: yellow;
+  }
+  body img {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
